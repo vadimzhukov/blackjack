@@ -79,7 +79,7 @@ class Game
   def player_action
     action_request
     @player_action = gets.chomp
-
+    
     case @player_action
     when '1'
       @player.take_card(deck)
@@ -104,8 +104,8 @@ class Game
 
   def open_cards
     puts '------- Вскрываем карты -------'
-    @player.print_status
-    @computer.print_status
+    @player.print_status(:final)
+    @computer.print_status(:final)
     define_winner
     give_reward
     game_over

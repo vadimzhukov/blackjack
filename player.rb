@@ -48,9 +48,11 @@ class Player
 
   def print_status(type = :visible)
     if type == :visible
-      puts "Карты игрока #{name}: #{show_cards}  очков: #{hand_score}"
-    else
+      puts "Карты игрока #{name}: #{show_cards}"
+    elsif type == :hidden
       puts "Карты игрока #{name}: #{show_cards(:hidden)}"
+    elsif type == :final
+      puts "Карты игрока #{name}: #{show_cards} очки: #{hand_score}"
     end
   end
 
